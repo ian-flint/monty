@@ -1,0 +1,30 @@
+<html>
+<head>
+<script>
+function monty() {
+    var g1Count = 0;
+    var g2Count = 0;
+    var ix;
+    var start = new Date().getTime();
+    for (ix = 0; ix < 10000000; ix ++) {
+        var car = Math.floor(Math.random() * 3) + 1;
+        if (car == 1) {
+            g1Count++;
+        } else {
+            g2Count++;
+        }
+    }
+    var end = new Date().getTime();
+    document.getElementById("result").innerHTML = 
+    "Guess 1: " + g1Count + "<p />" + "Guess 2: " + g2Count;
+    document.getElementById("result").innerHTML += 
+     "<p /> Elapsed: " + (end - start);
+
+}
+</script>
+</head>
+<body onload="monty()">
+<div id="result">
+</div>
+</body>
+</html>
